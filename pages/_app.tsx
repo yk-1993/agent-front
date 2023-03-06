@@ -14,11 +14,10 @@ const queryClient = new QueryClient({
     },
   },
 })
-
 export default function App({ Component, pageProps }: AppProps) {
   // フロント・バック間でCookieのやり取りをする場合、下記の[withCredentials]をtrueにする必要がある
   axios.defaults.withCredentials = true
-
+  
   // 初期処理でバックエンドのRestAPIのCSRFトークンを取得するエンドポイントにアクセスし、CSRFトークンを取得
   useEffect(() => {
     const getCsrfToken = async () => {
@@ -30,7 +29,6 @@ export default function App({ Component, pageProps }: AppProps) {
     }
     getCsrfToken()
   }, [])
-
   return (
     <QueryClientProvider client={queryClient}>
       <MantineProvider
