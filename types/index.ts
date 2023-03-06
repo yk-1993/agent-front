@@ -1,4 +1,4 @@
-export type AuthForn = {
+export type AuthForm = {
   email: string
   password: string
 }
