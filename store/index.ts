@@ -4,7 +4,7 @@ import { EditedTask } from '../types'
 type State = {
     editedTask:EditedTask
     updateEditedTask:(payload: EditedTask) => void
-    resetEditedTask:(payload: EditedTask) => void
+    resetEditedTask:() => void
 }
 
 const useStore = create<State>((set) => ({
